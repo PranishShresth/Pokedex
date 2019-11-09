@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Pokemon from './components/pokemon';
 
 
-
-
 class App extends Component{
 
   state = {
@@ -14,17 +12,22 @@ class App extends Component{
   }
 
    getPokemon = async (e) =>{
-     e.preventDefault();
+    e.preventDefault();
     const id = e.target.elements.pokemonid.value;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();
     console.log(data);
+    
    this.setState({
      pokemon_name: data.name.toUpperCase(),
-     pokemon_type:  data.types[0].type.name.toUpperCase(),
-     pokemon_image:data.sprites.back_default
-   })
+     pokemon_type:  data.types.map(x=>x.type.name.toUpperCase() + " , "),
+  
+     pokemon_image: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
 
+   })
+   
+     
+   
   }
     render(){
     return (
