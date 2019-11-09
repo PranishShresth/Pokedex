@@ -1,22 +1,65 @@
-.App {
+
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0
+}
+
+body{
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+  color: black;
+
+}
+
+h1,h3{
   text-align: center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
+
+
+.search-bar{
+display: flex;
+justify-content: center;
+padding-bottom: 100px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.search{
+  width:500px;
+  height:30px;
+}
+
+.Pokemon-info img{
+  margin-top: 20px;
+	max-width: 90%;
+}
+.poke-container{
+  background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto ;
+}
+
+.Pokemon-info{
+  display:grid;
+  margin-left:auto;
+  margin-right:auto;
+  border: 1px solid;
+  width:250px;
+  height:250px;
+ 
+  grid-template-rows: 1fr 1fr 3fr;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+      align-content: start;
+  border-radius: 15px;
+  background-color: #fceaff;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+
 }
 
-.App-link {
-  color: #09d3ac;
-}
